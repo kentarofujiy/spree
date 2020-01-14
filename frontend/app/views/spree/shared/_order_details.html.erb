@@ -1,5 +1,5 @@
 <div class="row steps-data">
-  <h1>here</h1>
+ 
   <% if order.has_step?("address") %>
     <div class="col-md-3 col-sm-3 col-xs-6" data-hook="order-bill-address">
       <h4><%= Spree.t(:billing_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></h4>
@@ -127,7 +127,7 @@
       <% next if (adjustment.source_type == 'Spree::TaxRate') and (adjustment.amount == 0) %>
       <tr class="total">
         <td colspan="4" align="right"><strong><%= adjustment.label %></strong></td>
-        <td class="total"><span><%= adjustment.display_amount.to_html %></span></td>
+        <td class="total"><span> <h1>here</h1><%= adjustment.display_amount.to_html %></span></td>
       </tr>
     <% end %>
   </tfoot>
