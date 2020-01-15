@@ -6,7 +6,7 @@ module Spree
 
         included do
           validate :check_attachment_presence
-          validate :check_attachment_content_type
+          #validate :check_attachment_content_type
 
           has_one_attached :attachment
 
