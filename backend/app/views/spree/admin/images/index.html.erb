@@ -39,11 +39,15 @@
           </td>
           <td class="image">
             <% if image.attachment.variable? %>
-            sim
+            <%= link_to image_tag(main_app.url_for(image.url(:mini))), main_app.url_for(image.url(:product)) %>
             <% else %>
-            nao
+             <video width="320" height="240" controls>
+  <source src="<%= image_path(main_app.url_for(image.attachment)) %>" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video> 
             <% end %>
-            <%#= link_to image_tag(main_app.url_for(image.url(:mini))), main_app.url_for(image.url(:product)) %>
+            
           </td>
           <% if has_variants %>
             <td><%= options_text_for(image) %></td>
