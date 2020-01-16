@@ -13,7 +13,16 @@
       <div class="form-group">
         <div data-hook="thumbnail" class="col-xs-12 col-md-3 text-center">
           <%= f.label Spree.t(:thumbnail) %>
-          <%= link_to image_tag(main_app.url_for(@image.url(:small))), main_app.url_for(@image.url(:product)) %>
+             <% if @image.variable? %>
+            <%= link_to image_tag(main_app.url_for(@image.url(:small))), main_app.url_for(@image.url(:product)) %>
+            <% else %>
+             <video width="320" height="240" controls>
+  <source src="<%= image_path(main_app.url_for(@image.attachment)) %>" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video> 
+            <% end %>
+          
         </div>
         <div class="col-xs-12 col-md-9">
           <%= render partial: 'form', locals: { f: f } %>
