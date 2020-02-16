@@ -99,7 +99,7 @@ module Spree
 
     @@store_credit_attributes = %i[amount currency category_id memo]
 
-    @@taxonomy_attributes = [:name]
+    @@taxonomy_attributes = [:name, :avatar]
 
     @@taxon_attributes = [
       :name, :parent_id, :position, :icon, :description, :permalink, :taxonomy_id,
