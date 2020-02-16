@@ -103,7 +103,7 @@ module Spree
 
     @@taxon_attributes = [
       :name, :parent_id, :position, :icon, :description, :permalink, :taxonomy_id,
-      :meta_description, :meta_keywords, :meta_title, :child_index
+      :meta_description, :meta_keywords, :meta_title, :child_index, :avatar
     ]
 
     # TODO: Should probably use something like Spree.user_class.attributes

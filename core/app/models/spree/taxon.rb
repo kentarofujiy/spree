@@ -18,7 +18,7 @@ module Spree
 
     has_many :promotion_rule_taxons, class_name: 'Spree::PromotionRuleTaxon', dependent: :destroy
     has_many :promotion_rules, through: :promotion_rule_taxons, class_name: 'Spree::PromotionRule'
-
+    has_one_attached :avatar
     validates :name, presence: true, uniqueness: { scope: [:parent_id, :taxonomy_id], allow_blank: true }
     validates :permalink, uniqueness: { case_sensitive: false }
     validates_associated :icon
