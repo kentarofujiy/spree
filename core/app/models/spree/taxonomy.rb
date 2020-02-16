@@ -6,7 +6,7 @@ module Spree
 
     has_many :taxons, inverse_of: :taxonomy
     has_one :root, -> { where parent_id: nil }, class_name: 'Spree::Taxon', dependent: :destroy
-
+    has_one_attached :avatar
     after_create :set_root
     after_save :set_root_taxon_name
 
